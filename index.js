@@ -4,20 +4,19 @@ require('dotenv').config({
 
 const express = require('express');
 const cors = require('cors');
-const pool = require('./db');
-const requestLogger = require('./middlewares/loggerMiddleware'); 
+const requestLogger = require('./src/modules/follow-parts/middlewares/loggerMiddleware'); 
 
-require('./cronjobs/updatearrivaldays');
-require('./cronjobs/updatesubscription');
+require('./src/modules/follow-parts/cronjobs/updatearrivaldays');
+require('./src/modules/follow-parts/cronjobs/updatesubscription');
 
-const authRoutes = require('./routes/AuthCentralRoute');
-const orderRoutes = require('./routes/OrdersCentralRoute');
-const adminRoutes = require('./routes/AdminCentralRoute');
-const settingRoute = require('./routes/SettingCentralRoute');
-const reportsroute = require('./routes/ReportsCentralRoute');
-const dealersroute = require('./routes/DealersCentralRoute');
-const systemroute = require('./routes/SystemCentralRoute');
-const dateroute = require('./routes/DateCentralRoutes');
+const authRoutes = require('./src/modules/follow-parts/routes/AuthCentralRoute');
+const orderRoutes = require('./src/modules/follow-parts/routes/OrdersCentralRoute');
+const adminRoutes = require('./src/modules/follow-parts/routes/AdminCentralRoute');
+const settingRoute = require('./src/modules/follow-parts/routes/SettingCentralRoute');
+const reportsroute = require('./src/modules/follow-parts/routes/ReportsCentralRoute');
+const dealersroute = require('./src/modules/follow-parts/routes/DealersCentralRoute');
+const systemroute = require('./src/modules/follow-parts/routes/SystemCentralRoute');
+const dateroute = require('./src/modules/follow-parts/routes/DateCentralRoutes');
 
 const app = express();
 
